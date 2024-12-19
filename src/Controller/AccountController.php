@@ -25,7 +25,7 @@ class AccountController extends AbstractController
         return $this->render('account/index.html.twig', [
         ]);
     }
-
+//compte/mot-de-passe
     /**
      * Permet la modification du mot de passe d'un utilisateur sur une page dédiée
      */
