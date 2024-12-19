@@ -16,6 +16,7 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * Espace membre (sécurisé)
  */
+//compte
 class AccountController extends AbstractController
 {
     #[Route('/compte', name: 'account')]
@@ -34,7 +35,7 @@ class AccountController extends AbstractController
         $user = $this->getUser();
         $form = $this->createForm(ChangePasswordType::class, $user);
         $form->handleRequest($request);
-
+//vérification de la validité du formulaire
         if ($form->isSubmitted() && $form->isValid()) {
             $old_password = $form->get('old_password')->getData();
             $new_password = $form->get('new_password')->getData();
@@ -60,7 +61,7 @@ class AccountController extends AbstractController
             'form' => $form
         ]);
     }
-
+/*/compte/commandes
     /**
      * Affiche la vue de toutes les commandes d'un utilisateur
      */
@@ -72,7 +73,7 @@ class AccountController extends AbstractController
             'orders' => $orders
         ]);
     }
-
+//compte/commandes/{reference}
     /**
      * Affiche une commande
      */
